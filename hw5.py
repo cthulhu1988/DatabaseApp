@@ -198,5 +198,3 @@ root.mainloop()
 
     ## creates tables
     ## insert into
-
-#apt-get install python3-tk for tkinter
