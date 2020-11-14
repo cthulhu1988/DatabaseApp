@@ -2,12 +2,16 @@
 import sqlite3
 import createTables as ct
 import insertValues as iv
+import insData as ins
 from tkinter import *
-database = "customer.db"
+database = "data.db"
 root = Tk()
 root.title("Database Entry System")
 root.geometry("1000x800")
 
+
+ct.createTables()
+ins.InsertTableData()
 
 def increaseStatus():
     conn = sqlite3.connect(database)
@@ -18,7 +22,6 @@ def increaseStatus():
     conn.commit()
     conn.close()
 
-ct.createTables()
 def shipments_entry():
     conn = sqlite3.connect(database)
     c = conn.cursor()

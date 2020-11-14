@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
 import sqlite3
+database = "data.db"
 
 def createTables():
-    conn = sqlite3.connect('customer.db')
+    conn = sqlite3.connect(database)
     c = conn.cursor()
     ## Create Supplier table:
     c.execute("""

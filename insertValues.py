@@ -2,7 +2,7 @@
 import sys
 import sqlite3
 import traceback
-database = "customer.db"
+database = "data.db"
 
 def getVal(table):
     conn = sqlite3.connect(database)
