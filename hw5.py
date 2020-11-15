@@ -9,7 +9,7 @@ root = Tk()
 root.title("Database Entry System")
 root.geometry("1000x800")
 
-
+### Pull from imported modules
 ct.createTables()
 ins.InsertTableData()
 

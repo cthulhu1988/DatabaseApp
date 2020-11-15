@@ -4,6 +4,8 @@ import sqlite3
 import traceback
 database = "data.db"
 
+######### Extraneous functions to insert values and return values ##########################
+
 def getPartShipped(table, part):
     ### prevent SQL injection. Only allows entries under 4 chars long.
     ### Also checks first letter. Allows for parts up to 'p999'
