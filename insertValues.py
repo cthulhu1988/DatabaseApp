@@ -5,6 +5,10 @@ import traceback
 database = "data.db"
 
 def getPartShipped(table, part):
+    ### prevent SQL injection. Only allows entries under 4 chars long.
+    ### Also checks first letter. Allows for parts up to 'p999'
+    if len(part) > 4 or part[0] != 'p':
+        return "FAILED SQL INJECTION"
     conn = sqlite3.connect(database)
     c = conn.cursor()
     c.execute("SELECT * FROM {} JOIN SUPPLIER on SHIPMENT.Sno = SUPPLIER.Sno WHERE Pno = '{}'".format(table, part))
