@@ -4,10 +4,19 @@ import sqlite3
 import traceback
 database = "data.db"
 
+def getPartShipped(table, part):
+    conn = sqlite3.connect(database)
+    c = conn.cursor()
+    c.execute("SELECT * FROM {} JOIN SUPPLIER on SHIPMENT.Sno = SUPPLIER.Sno WHERE Pno = '{}'".format(table, part))
+    fetch = (c.fetchall())
+    return fetch
+    conn.commit()
+    conn.close()
+
+
 def getVal(table):
     conn = sqlite3.connect(database)
     c = conn.cursor()
-
     c.execute("SELECT * FROM {}".format(table))
     fetch = (c.fetchall())
     return fetch

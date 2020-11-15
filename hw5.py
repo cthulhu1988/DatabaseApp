@@ -100,6 +100,21 @@ ship_button.grid(row = 30, column = 2, padx = 0)
 status_button = Button(root, text="status x 10%", command=increaseStatus)
 status_button.grid(row = 1, column = 6, padx = 20)
 
+def getPart():
+    matches = iv.getPartShipped("SHIPMENT", part_no_entry.get())
+    part_no_info.delete('1.0', END)
+    part_no_info.insert(INSERT,matches)
+    part_no_entry.delete(0,END)
+
+################# prompt user for part no:
+part_no_button = Button(root, text="Enter Part No:", command=getPart)
+part_no_button.grid(row = 2, column = 6, padx = 20, pady = 20)
+
+part_no_entry = Entry(root, width=10)
+part_no_entry.grid(row = 2, column = 7, padx = 5, pady = 20)
+
+part_no_info= Text(root, height = 6, width = 30)
+part_no_info.grid(row=3, column=6, columnspan = 3, padx=10)
 
 
 ################ SUPPLIER ###########################################
