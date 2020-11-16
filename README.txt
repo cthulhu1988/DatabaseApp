@@ -44,5 +44,6 @@ python3 hw5.py
 
 5. Links and URLS
 The project is hosted on Github at: https://github.com/cthulhu1988/DatabaseApp
-In addition, there is a video showing the execution at: 
+In addition, there is a video showing the execution at: https://youtu.be/0sr1-IABnYY
+or at: https://www.youtube.com/watch?v=0sr1-IABnYY&feature=youtu.be
 
